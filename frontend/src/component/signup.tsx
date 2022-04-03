@@ -4,9 +4,12 @@ import Lottie from 'react-lottie';
 import animationData from './Assets/lotties/login-main.json';
 import animationData2 from './Assets/lotties/medicee-lottie.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Signup() {
+
+    const navigate = useNavigate();
 
   const defaultOption = {
     loop:true,
@@ -64,10 +67,10 @@ export default function Signup() {
                                 <label className="form-check-label sign-in-paragraph" ><input type="checkbox" /> I accept the <a href="#" className="text-info">Terms of Use</a> &amp; <a href="#" className="text-info">Privacy Policy</a></label>
                             </div>
                             <div className="form-group">
-                                <button type="submit" className="btn btn-customize btn-success btn-block mb-3">Sign up</button>
+                                <button type="submit" onClick={() => navigate("/signin")} className="btn btn-customize btn-success btn-block mb-3">Sign up</button>
                             </div>
                         </form>
-                        <a href="login.html" className="text-info">Already have an account? Click here</a>    
+                        <a onClick={() => navigate("/signin")} className="text-info">Already have an account? Click here</a>    
                     </div>
                 </div>
             </div>

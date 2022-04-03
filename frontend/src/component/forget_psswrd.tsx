@@ -4,9 +4,10 @@ import Lottie from 'react-lottie';
 import animationData from './Assets/lotties/login-main.json';
 import animationData2 from './Assets/lotties/medicee-lottie.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {useNavigate} from 'react-router-dom';
 
 export default function Forget() {
+    const navigate = useNavigate();
 
   const defaultOption = {
     loop:true,
@@ -47,7 +48,7 @@ export default function Forget() {
                                 <button type="submit" className="btn btn-customize btn-success btn-block mb-3">Get Reset Link</button>
                             </div>
                         </form>
-                        <a href="login.html" className="text-info">get back to login page </a>    
+                        <a onClick={() => navigate('/signin')} className="text-info">get back to login page </a>    
                     </div>
                 </div>
             </div>

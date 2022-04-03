@@ -5,9 +5,11 @@ import animationData from './Assets/lotties/login-main.json';
 import animationData2 from './Assets/lotties/medicee-lottie.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { useNavigate } from "react-router-dom";
 
 
 export default function Signin() {
+    const navigate = useNavigate();
 
   const defaultOption = {
     loop:true,
@@ -49,13 +51,13 @@ export default function Signin() {
                                 <label htmlFor="userPassword" className="sr-only">Password</label>
                                 <input type="password" name="userPassword" id="userPassword" className="form-control" placeholder="Password" required/>
                             </div>
-                            <button type="submit" className="btn btn-customize btn-success btn-block mb-3">Sign in</button>
+                            <button type="submit" onClick={() => navigate("/dashboard")} className="btn btn-customize btn-success btn-block mb-3">Sign in</button>
                             <div className="d-md-flex justify-content-between">
                                 <div className="form-check">
                                     {/* <!-- <input type="checkbox" className="form-check-input" name="termsAgriment" id="termsAgriment" value="termsAgreed"> --> */}
-                                    <a href="sign up.html" className="text-info">Click here to register?</a>
+                                    <a onClick={() => navigate("/signup")} className="text-info">Click here to register?</a>
                                 </div>
-                                <a href="forget_password.html" className="text-info">Forgot Password?</a>
+                                <a onClick={() => navigate("/forget_psswrd")} className="text-info">Forgot Password?</a>
                             </div>
                             <hr className="horizon-line-padding" />
 
